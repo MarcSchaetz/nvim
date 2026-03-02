@@ -15,6 +15,7 @@ return {
   build = 'make tiktoken', -- Only on MacOS or Linux
   opts = {
     -- add a new prompt for the chat that creates a git commit message in conventional commit format for the staged files
+	model = "claude-opus-4.6",
     prompts = {
       Commit = require 'prompts.git_commit',
       Angular = require 'prompts.angular',

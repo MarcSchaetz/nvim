@@ -11,6 +11,7 @@ vim.o.smartcase = true
 vim.o.winborder = "rounded"
 vim.o.completeopt = "menu,popup,noinsert"
 vim.o.scrolloff = 8
+vim.o.splitright = true
 
 vim.schedule(function()
 	vim.o.clipboard = "unnamedplus"
