@@ -8,6 +8,7 @@ return {
 			typescript = { 'prettier' },
 			javascript = { 'prettier' },
 			html = { 'prettier' },
+			htmlangular = { 'prettier' },
 			css = { 'prettier' },
 			json = { 'prettier' },
 			python = { 'black' },
