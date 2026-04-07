@@ -1,7 +1,7 @@
 require"config.options"
 require"config.keymaps"
 require"config.autocmds"
-require"config.lazy"
+require"plugins"
 require"config.lsp"
 
-vim.cmd.colorscheme "tokyonight-night"
+vim.cmd.colorscheme  "tokyonight-night"

@@ -34,3 +34,4 @@ end
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP Format" })
 vim.keymap.set("n", "grd", vim.lsp.buf.definition, { desc = "LSP Definition" })
 vim.keymap.set("n", "grD", vim.lsp.buf.declaration, { desc = "LSP Declaration" })
+

@@ -107,3 +107,4 @@ Here is a link to the most recent Angular style guide https://angular.dev/style-
 	'An expert Angular developer well-versed in the latest Angular v20+ features, including signals, standalone components, and modern template syntax, dedicated to writing clean, efficient, and maintainable code.',
 	prompt = ""
 }
+

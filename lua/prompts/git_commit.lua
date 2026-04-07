@@ -98,5 +98,6 @@ file/feature ...", or "Make Subsurface..."
 To sign off the commit use the Name `Marc Schätz` and the email `m.schaetz@weinzierl.de`
 ]],
 	description = 'Generate a git commit message for the staged files',
-	prompt = "Please generate a git commit message for the staged changes."
+	prompt = "Please generate a git commit message for the staged changes as defined by the system prompt."
 }
+

@@ -8,8 +8,8 @@ local servers = {
   'tailwindcss',
 }
 
-vim.diagnostic.config {
-  virtual_text = true,
+vim.diagnostic.config{
+	virtual_text = true
 }
 
 vim.lsp.enable(servers)
@@ -19,11 +19,11 @@ for _, server in ipairs(servers) do
   vim.lsp.config[server].capabilities = require('blink.cmp').get_lsp_capabilities(c)
 end
 
-vim.schedule(function()
-  local fl = require 'fzf-lua'
-  vim.lsp.buf.references = fl.lsp_references
-  vim.lsp.buf.definition = fl.lsp_definitions
-  vim.lsp.buf.implementation = fl.lsp_implementations
-  vim.lsp.buf.type_definition = fl.lsp_typedefs
-  vim.lsp.buf.declaration = fl.lsp_declarations
-end)
+-- vim.schedule(function()
+--   local fl = require 'fzf-lua'
+--   vim.lsp.buf.references = fl.lsp_references
+--   vim.lsp.buf.definition = fl.lsp_definitions
+--   vim.lsp.buf.implementation = fl.lsp_implementations
+--   vim.lsp.buf.type_definition = fl.lsp_typedefs
+--   vim.lsp.buf.declaration = fl.lsp_declarations
+-- end)
