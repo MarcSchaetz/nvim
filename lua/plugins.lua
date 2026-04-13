@@ -112,7 +112,7 @@ vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 
 require("CopilotChat").setup({
-	model = "gpt-5-mini",
+	model = "gpt-4.1",
 	prompts = {
 		Commit = require("prompts.git_commit"),
 		Angular = require("prompts.angular"),
@@ -127,6 +127,7 @@ require("todo-comments").setup()
 require("mason").setup()
 
 -- Mini
+require("mini.icons").setup()
 require("mini.statusline").setup({ use_icons = vim.g.have_nerd_font })
 require("mini.diff").setup({
 	view = {
