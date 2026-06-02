@@ -6,10 +6,13 @@ local servers = {
   'angularls',
   'emmet_ls',
   'tailwindcss',
+  'rust_analyzer',
+  'jsonls',
+  'vacuum',
 }
 
-vim.diagnostic.config{
-	virtual_text = true
+vim.diagnostic.config {
+  virtual_text = true,
 }
 
 vim.lsp.enable(servers)
