@@ -11,6 +11,15 @@ vim.keymap.set('i', '<C-L>', '<Plug>(copilot-accept-word)')
 
 vim.keymap.set('n', '<leader>c', '<CMD>LspClangdSwitchSourceHeader<CR>', { desc = "Switch between source/header file", silent = true })
 
+vim.lsp.buf.format = function()
+	require("conform").format({ async = true })
+end
+
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP Format" })
+vim.keymap.set("n", "grd", vim.lsp.buf.definition, { desc = "LSP Definition" })
+vim.keymap.set("n", "grD", vim.lsp.buf.declaration, { desc = "LSP Declaration" })
+
+
 vim.schedule(function()
 	-- fzf.lua keymaps
 	local fl = require("fzf-lua")
@@ -25,13 +34,9 @@ vim.schedule(function()
 	-- oil.nvim
 	vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open Oil", silent = true })
 
+	if vim.g.loaded_copilot_chat then
+		vim.keymap.set("n", "<leader>kc", "<CMD>CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat", silent = true })
+	end
+
 end)
-
-vim.lsp.buf.format = function()
-	require("conform").format({ async = true })
-end
-
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP Format" })
-vim.keymap.set("n", "grd", vim.lsp.buf.definition, { desc = "LSP Definition" })
-vim.keymap.set("n", "grD", vim.lsp.buf.declaration, { desc = "LSP Declaration" })
 

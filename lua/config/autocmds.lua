@@ -7,3 +7,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_user_command("VimPackInfo", function() vim.pack.update(nil, { offline = true }) end, { desc = "" })
+
+vim.api.nvim_create_user_command("VimPackUpdate", function() vim.pack.update(nil, { force = true }) end, { desc = "" })

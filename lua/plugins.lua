@@ -19,7 +19,7 @@ vim.pack.add {
   gh 'CopilotC-Nvim/CopilotChat.nvim',
   gh 'folke/todo-comments.nvim',
   { src = gh 'nvim-lua/plenary.nvim', version = 'master' }, -- for curl, log and async functions
-  { src = gh 'saghen/blink.cmp', version = vim.version.range '1.10.1' },
+  { src = gh 'saghen/blink.cmp', version = vim.version.range '1.*' },
 }
 
 -- Fzf lua
@@ -94,6 +94,7 @@ require('conform').setup {
     htmlangular = { 'prettier' },
     css = { 'prettier' },
     json = { 'prettier' },
+	markdown = { 'prettier' },
     python = { 'black' },
     rust = { 'rustfmt' },
   },
