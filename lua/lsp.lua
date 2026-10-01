@@ -6,9 +6,9 @@ local servers = {
   'angularls',
   'emmet_ls',
   'tailwindcss',
-  'rust_analyzer',
+  --   'rust_analyzer',
   'jsonls',
-  'vacuum',
+  --   'vacuum',
 }
 
 vim.diagnostic.config {
@@ -20,13 +20,17 @@ vim.lsp.enable(servers)
 for _, server in ipairs(servers) do
   local c = vim.lsp.config[server].capabilities
   vim.lsp.config[server].capabilities = require('blink.cmp').get_lsp_capabilities(c)
+  if server == 'clangd' then
+    vim.lsp.config.clangd.cmd = {
+      'clangd',
+      '--background-index',
+      '--clang-tidy',
+      '--header-insertion=iwyu',
+      '--completion-style=detailed',
+      '--function-arg-placeholders=1',
+      '--fallback-style=llvm',
+      '--log=error',
+    }
+  end
 end
 
--- vim.schedule(function()
---   local fl = require 'fzf-lua'
---   vim.lsp.buf.references = fl.lsp_references
---   vim.lsp.buf.definition = fl.lsp_definitions
---   vim.lsp.buf.implementation = fl.lsp_implementations
---   vim.lsp.buf.type_definition = fl.lsp_typedefs
---   vim.lsp.buf.declaration = fl.lsp_declarations
--- end)

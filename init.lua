@@ -1,11 +1,17 @@
-require"config.options"
-require"config.keymaps"
-require"config.autocmds"
+-- ********************************************************************************
+--
+-- 						  Marc's Neovim Configuration
+--
+-- ********************************************************************************
+
+
+-- Load basic vim configuration first
+require"basic_options"
+-- then load all native available keymaps
+require"basic_keymap"
+-- then load the native available autocommands
+require"basic_autocmds"
+-- then load all plugins
 require"plugins"
-require"config.lsp"
-
-vim.cmd.colorscheme  "tokyonight-night"
-
--- set Normal and NormalFloat bg to none for picom transparency
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- lastly load all lsp configurations
+require"lsp"
