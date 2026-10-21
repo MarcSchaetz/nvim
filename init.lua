@@ -11,6 +11,8 @@ require"basic_options"
 require"basic_keymap"
 -- then load the native available autocommands
 require"basic_autocmds"
+-- then load all user commands
+require"basic_usercmds"
 -- then load all plugins
 require"plugins"
 -- lastly load all lsp configurations
